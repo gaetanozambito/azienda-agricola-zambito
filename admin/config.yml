@@ -38,6 +38,7 @@ collections:
               - {label: Nome prodotto, name: nome, widget: string}
               - {label: Capacità (litri), name: litri, widget: number, value_type: float, min: 0.1, step: 0.1}
               - {label: Prezzo (€), name: prezzo_eur, widget: number, value_type: float, min: 0, step: 0.01}
+              - {label: Prezzo precedente da barrare (€), name: prezzo_precedente_eur, widget: number, value_type: float, min: 0, step: 0.01, required: false, hint: "Facoltativo: visibile barrato solo se maggiore del prezzo attuale. Usare un prezzo precedente reale."}
               - {label: Descrizione, name: descrizione, widget: text, required: false}
               - {label: Foto principale, name: immagine, widget: image, required: false, hint: "Foto reale del prodotto; preferibilmente verticale e luminosa."}
               - label: Galleria fotografica

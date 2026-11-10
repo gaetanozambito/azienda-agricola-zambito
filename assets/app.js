@@ -13,6 +13,17 @@ const setText = (id, value) => { if ($(id)) $(id).textContent = value; };
 const imgNode = (url, alt) => {const img = document.createElement('img');img.src=url;img.alt=alt;img.loading='lazy';return img;};
 const waLink = (phone, message) => `https://wa.me/${digitsOnly(phone)}?text=${encodeURIComponent(message)}`;
 const makeButton = (label, href, className='btn btn-dark') => {const a=document.createElement('a');a.textContent=label;a.className=className;a.href=href;a.target='_blank';a.rel='noopener noreferrer';return a;};
+const oldPriceNode = product => {
+  const old = Number(product.prezzo_precedente_eur);
+  const current = Number(product.prezzo_eur);
+  if (product.prezzo_precedente_eur == null || product.prezzo_precedente_eur === '' ||
+      !Number.isFinite(old) || !Number.isFinite(current) || old <= current) return null;
+  const del = document.createElement('del');
+  del.className = 'previous-price';
+  del.textContent = euro(old);
+  del.setAttribute('aria-label', 'Prezzo precedente');
+  return del;
+};
 const badge = label => {const b=document.createElement('span');b.className='cert-badge';b.textContent=label;return b;};
 const certificateLabels = cert => [cert?.biologico === 'verificato' ? 'Biologico' : null, cert?.dop_val_di_mazara === 'verificato' ? 'DOP Val di Mazara' : null].filter(Boolean);
 const addCertificates = (target, cert) => {target.replaceChildren();for(const label of certificateLabels(cert))target.append(badge(label));};
@@ -24,6 +35,8 @@ function showProduct(product){
   setText('dialog-title',safeText(product.nome,`Latta ${size} litri`));
   setText('dialog-description',safeText(product.descrizione));
   setText('dialog-price',Number.isFinite(price)?euro(price):'Prezzo su richiesta');
+  const dialogOld = $('dialog-old-price');
+  if (dialogOld) { dialogOld.replaceChildren(); const old = oldPriceNode(product); if (old) dialogOld.append(old); }
   setText('dialog-unit',size>0&&Number.isFinite(price)?`${euro(price/size)} al litro`: '');
   setText('dialog-availability',product.disponibile===false?'Disponibilità da verificare':'Disponibilità da confermare al momento della richiesta');
   addCertificates($('dialog-certifications'),currentCatalog.certificazioni);
@@ -54,7 +67,7 @@ function renderProducts(data,site){
     const kicker=document.createElement('p');kicker.className='product-kicker';kicker.textContent='OLIO EXTRAVERGINE DI OLIVA';
     const name=document.createElement('h3');name.textContent=safeText(p.nome,`Latta ${size} litri`);
     const desc=document.createElement('p');desc.className='product-description';desc.textContent=safeText(p.descrizione);
-    const row=document.createElement('div');row.className='product-price-row';const amount=document.createElement('strong');amount.textContent=Number.isFinite(price)?euro(price):'Su richiesta';const unit=document.createElement('span');unit.textContent=size>0&&Number.isFinite(price)?`${euro(price/size)}/L`:'';row.append(amount,unit);
+    const row=document.createElement('div');row.className='product-price-row';const amount=document.createElement('strong');amount.textContent=Number.isFinite(price)?euro(price):'Su richiesta';const unit=document.createElement('span');unit.textContent=size>0&&Number.isFinite(price)?`${euro(price/size)}/L`:'';const previous=oldPriceNode(p);if(previous)row.append(previous);row.append(amount,unit);
     const actions=document.createElement('div');actions.className='product-actions';
     const details=document.createElement('button');details.className='text-button';details.textContent='Dettagli e foto ↗';details.addEventListener('click',()=>showProduct(p));actions.append(details);
     if(isValidPhone(site.whatsapp)){
