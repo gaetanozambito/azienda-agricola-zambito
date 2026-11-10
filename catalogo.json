@@ -3,10 +3,15 @@
   "prodotto": "Olio extravergine di oliva biologico DOP Val di Mazara",
   "prezzo_litro_eur": 10,
   "valuta": "EUR",
-  "formati_litri": [5, 10, 20, 25],
+  "formati_litri": [
+    5,
+    10,
+    20,
+    25
+  ],
   "whatsapp": null,
   "certificazioni": {
-    "biologico": "da_verificare",
-    "dop_val_di_mazara": "da_verificare"
+    "biologico": "verificato",
+    "dop_val_di_mazara": "verificato"
   }
 }
