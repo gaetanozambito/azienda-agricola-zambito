@@ -4,3 +4,86 @@
 .previous-price{color:#8d918a;text-decoration:line-through;text-decoration-thickness:1.5px;font-size:.9rem;font-weight:400;margin-right:8px}.product-price-row{flex-wrap:wrap;align-items:baseline;gap:8px}#dialog-old-price .previous-price{font-size:1.05rem}
 
 .dialog-price-wrap{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.dialog-price-wrap .dialog-price{margin:0}
+/* =========================================
+   CAROSELLO MULTIMEDIALE HOMEPAGE
+========================================= */
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+  background: #183b2b;
+}
+
+.hero-media img,
+.hero-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-controls {
+  position: absolute;
+  right: max(5vw, 24px);
+  bottom: 65px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-controls button {
+  border: 1px solid rgba(255,255,255,.5);
+  background: rgba(0,0,0,.25);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hero-controls button:hover {
+  background: rgba(213,187,126,.8);
+}
+
+.hero-controls button[hidden] {
+  display: none;
+}
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-dots .hero-dot {
+  width: 9px;
+  height: 9px;
+  min-width: 9px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
+}
+
+.hero-dots .hero-dot.active {
+  background: #d5bb7e;
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .hero-media img,
+  .hero-media video {
+    object-position: center;
+  }
+
+  .hero-controls {
+    bottom: 53px;
+    right: 20px;
+  }
+}

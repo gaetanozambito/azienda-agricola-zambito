@@ -77,13 +77,145 @@ function renderProducts(data,site){
     body.append(kicker,name,desc,row,actions);card.append(visual,body);container.append(card);
   }
 }
+let heroTimer = null;
+let heroIndex = 0;
+let heroSlides = [];
+
+function initHeroCarousel(site) {
+  const container = document.getElementById("hero-media");
+  const dots = document.getElementById("hero-dots");
+  const prev = document.getElementById("hero-prev");
+  const next = document.getElementById("hero-next");
+
+  if (!container || !dots || !prev || !next) return;
+
+  if (heroTimer) clearTimeout(heroTimer);
+
+  heroSlides = (Array.isArray(site.hero_slides)
+    ? site.hero_slides
+    : []
+  ).filter(slide => {
+    const path = slide.tipo === "video"
+      ? slide.video
+      : slide.immagine;
+
+    return Boolean(safeImage(path));
+  });
+
+  // Compatibilità con la vecchia immagine homepage.
+  if (!heroSlides.length && safeImage(site.hero_immagine)) {
+    heroSlides = [{
+      titolo: "Homepage",
+      tipo: "immagine",
+      immagine: site.hero_immagine,
+      durata: 8
+    }];
+  }
+
+  if (!heroSlides.length) {
+    container.style.background =
+      "linear-gradient(135deg, #234d35, #102a20)";
+    prev.hidden = true;
+    next.hidden = true;
+    dots.replaceChildren();
+    return;
+  }
+
+  heroIndex = 0;
+  const multiple = heroSlides.length > 1;
+
+  prev.hidden = !multiple;
+  next.hidden = !multiple;
+
+  function showSlide(index) {
+    clearTimeout(heroTimer);
+
+    heroIndex =
+      (index + heroSlides.length) % heroSlides.length;
+
+    const slide = heroSlides[heroIndex];
+
+    // Rimuove il video precedente e ne interrompe la riproduzione.
+    container.replaceChildren();
+    dots.replaceChildren();
+
+    const mediaPath = slide.tipo === "video"
+      ? slide.video
+      : slide.immagine;
+
+    const url = safeImage(mediaPath);
+
+    if (slide.tipo === "video") {
+      const video = document.createElement("video");
+
+      video.src = url;
+      video.autoplay = true;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+
+      container.append(video);
+
+      // Alcuni browser possono impedire l'autoplay.
+      video.play().catch(() => {});
+    } else {
+      const img = document.createElement("img");
+
+      img.src = url;
+      img.alt = "";
+      img.decoding = "async";
+
+      container.append(img);
+    }
+
+    if (multiple) {
+      heroSlides.forEach((_, i) => {
+        const dot = document.createElement("button");
+
+        dot.type = "button";
+        dot.className = "hero-dot";
+
+        if (i === heroIndex) {
+          dot.classList.add("active");
+        }
+
+        dot.setAttribute(
+          "aria-label",
+          `Vai alla slide ${i + 1}`
+        );
+
+        dot.addEventListener("click", () => showSlide(i));
+
+        dots.append(dot);
+      });
+
+      const seconds = Math.min(
+        60,
+        Math.max(3, Number(slide.durata) || 8)
+      );
+
+      heroTimer = setTimeout(
+        () => showSlide(heroIndex + 1),
+        seconds * 1000
+      );
+    }
+  }
+
+  prev.onclick = () => showSlide(heroIndex - 1);
+  next.onclick = () => showSlide(heroIndex + 1);
+
+  showSlide(0);
+}
 function renderSite(site){
   setText('hero-kicker',safeText(site.hero_soprattitolo));setText('hero-title',safeText(site.hero_titolo));setText('hero-description',safeText(site.hero_descrizione));
   setText('about-title',safeText(site.azienda_titolo));setText('about-description',safeText(site.azienda_testo));
   setText('catalog-title',safeText(site.catalogo_titolo));setText('contact-title',safeText(site.contatti_titolo));setText('contact-description',safeText(site.contatti_testo));
   setText('contact-location',safeText(site.localita));setText('hero-localita',safeText(site.localita).toUpperCase());
   const logo=safeImage(site.logo);if(logo){$('brand-mark').replaceChildren(imgNode(logo,'Logo Azienda Agricola Zambito'));}
-  const hero=safeImage(site.hero_immagine);if(hero){$('hero-photo').style.backgroundImage=`url(${JSON.stringify(hero)})`;}
+  initHeroCarousel(site);
+  //const hero=safeImage(site.hero_immagine);if(hero){$('hero-photo').style.backgroundImage=`url(${JSON.stringify(hero)})`;}
   const about=safeImage(site.azienda_immagine);if(about){$('about-visual').replaceChildren(imgNode(about,'La nostra azienda agricola'));}
   const actions=$('contact-actions');actions.replaceChildren();
   if(isValidPhone(site.whatsapp))actions.append(makeButton('Scrivici su WhatsApp ↗',waLink(site.whatsapp,safeText(site.whatsapp_messaggio,'Buongiorno, vorrei informazioni sui vostri prodotti.')),'btn btn-gold'));

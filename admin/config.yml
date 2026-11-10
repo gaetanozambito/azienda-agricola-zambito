@@ -58,6 +58,46 @@ collections:
         fields:
           - {label: Logo aziendale, name: logo, widget: image, required: false}
           - {label: Foto principale homepage, name: hero_immagine, widget: image, required: false}
+          - label: Carosello multimediale homepage
+            name: hero_slides
+            widget: list
+            required: false
+            collapsed: true
+            summary: "{{fields.titolo}} — {{fields.tipo}}"
+            hint: "Aggiungi fotografie e video. Puoi riordinare le slide trascinandole."
+            fields:
+              - label: Nome della slide
+                name: titolo
+                widget: string
+                hint: "Nome identificativo visibile solo nel pannello."
+
+              - label: Tipo di contenuto
+                name: tipo
+                widget: select
+                options:
+                  - {label: Fotografia, value: immagine}
+                  - {label: Video MP4, value: video}
+                default: immagine
+
+              - label: Fotografia
+                name: immagine
+                widget: image
+                required: false
+                hint: "Carica una fotografia per questa slide."
+
+              - label: Video MP4
+                name: video
+                widget: file
+                required: false
+                hint: "Carica un breve video MP4, preferibilmente compresso."
+
+              - label: Durata della slide (secondi)
+                name: durata
+                widget: number
+                value_type: int
+                default: 8
+                min: 3
+                max: 60 
           - {label: Soprattitolo homepage, name: hero_soprattitolo, widget: string}
           - {label: Titolo homepage, name: hero_titolo, widget: string}
           - {label: Descrizione homepage, name: hero_descrizione, widget: text}

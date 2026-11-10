@@ -1,28 +1,124 @@
 <!doctype html>
 <html lang="it">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#183b2b">
-  <meta name="description" content="Azienda Agricola Zambito: scopri i formati di olio extravergine di oliva e richiedi informazioni direttamente su WhatsApp.">
+  <meta name="description"
+    content="Azienda Agricola Zambito: scopri i formati di olio extravergine di oliva e richiedi informazioni direttamente su WhatsApp.">
   <title>Azienda Agricola Zambito | Olio extravergine di oliva</title>
   <link rel="stylesheet" href="/assets/style.css">
   <script src="/assets/app.js" defer></script>
 </head>
+
 <body>
   <header class="site-header">
-    <a class="brand" href="#inizio" aria-label="Azienda Agricola Zambito - homepage"><span class="brand-mark" id="brand-mark">✳</span><span class="brand-copy">AZIENDA AGRICOLA <strong id="brand-name">ZAMBITO</strong></span></a>
-    <nav aria-label="Navigazione principale"><a href="#azienda">L'azienda</a><a href="#catalogo">Catalogo</a><a href="#contatti">Contatti</a></nav>
+    <a class="brand" href="#inizio" aria-label="Azienda Agricola Zambito - homepage"><span class="brand-mark"
+        id="brand-mark">✳</span><span class="brand-copy">AZIENDA AGRICOLA <strong
+          id="brand-name">ZAMBITO</strong></span></a>
+    <nav aria-label="Navigazione principale"><a href="#azienda">L'azienda</a><a href="#catalogo">Catalogo</a><a
+        href="#contatti">Contatti</a></nav>
     <a class="nav-contact" href="#contatti">Richiedi informazioni <span aria-hidden="true">↗</span></a>
   </header>
   <main id="inizio">
-    <section class="hero"><div class="hero-photo" id="hero-photo" aria-hidden="true"></div><div class="hero-shade"></div><div class="hero-content"><p class="kicker" id="hero-kicker">DALLA NOSTRA TERRA · SICILIA</p><h1 id="hero-title">L'essenza della nostra terra.</h1><p id="hero-description">Olio extravergine di oliva. Una tradizione agricola che raccontiamo attraverso ogni raccolto.</p><div class="hero-actions"><a class="btn btn-gold" href="#catalogo">Esplora il catalogo <span aria-hidden="true">↗</span></a><a class="hero-link" href="#azienda">La nostra storia ↓</a></div></div><div class="hero-bottom"><span>AZIENDA AGRICOLA ZAMBITO</span><span id="hero-localita">SICILIA, ITALIA</span></div></section>
-    <section class="trust-strip" aria-label="Caratteristiche del prodotto"><span>PRODUZIONE AGRICOLA</span><span class="dot">✳</span><span>OLIO EXTRAVERGINE DI OLIVA</span><span class="dot">✳</span><span>CONTATTO DIRETTO</span></section>
-    <section class="about section-wrap" id="azienda"><div class="about-copy"><p class="section-kicker">LA NOSTRA IDENTITÀ</p><h2 id="about-title">Il gusto autentico dell'olio siciliano.</h2><p id="about-description">La nostra azienda propone olio extravergine di oliva in diversi formati. Contattaci per informazioni e disponibilità.</p><div id="certifications" class="certifications" aria-label="Certificazioni dichiarate"></div></div><div class="about-visual" id="about-visual"><div class="about-placeholder"><span>✳</span><p>Una storia che nasce dalla terra</p></div></div></section>
-    <section class="catalog-section" id="catalogo"><div class="section-wrap"><div class="catalog-heading"><div><p class="section-kicker">I NOSTRI PRODOTTI</p><h2 id="catalog-title">Scegli il tuo formato.</h2></div><p>Esplora i prodotti e contattaci direttamente per disponibilità e ordini.</p></div><div id="products" class="products-grid" aria-live="polite"><p>Caricamento catalogo…</p></div><p class="catalog-disclaimer">Catalogo informativo: nessun pagamento online. Disponibilità, eventuale spedizione e condizioni di vendita da concordare direttamente.</p></div></section>
-    <section class="contact-section" id="contatti"><div class="contact-inner"><p class="section-kicker light">PARLIAMONE</p><h2 id="contact-title">Parliamo del tuo prossimo ordine.</h2><p id="contact-description">Hai bisogno di informazioni, disponibilità o di un preventivo? Scrivici direttamente.</p><div id="contact-actions"><span class="contact-wait">Il contatto WhatsApp sarà disponibile a breve.</span></div><p class="contact-location" id="contact-location">Sicilia, Italia</p></div></section>
+    <section class="hero">
+      <div class="hero-media" id="hero-media" aria-hidden="true"></div>
+
+      <div class="hero-controls">
+        <button type="button" id="hero-prev" aria-label="Slide precedente">
+          &#10094;
+        </button>
+
+        <div id="hero-dots" class="hero-dots"></div>
+
+        <button type="button" id="hero-next" aria-label="Slide successiva">
+          &#10095;
+        </button>
+      </div>
+
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="kicker" id="hero-kicker">DALLA NOSTRA TERRA · SICILIA</p>
+        <h1 id="hero-title">L'essenza della nostra terra.</h1>
+        <p id="hero-description">Olio extravergine di oliva. Una tradizione agricola che raccontiamo attraverso ogni
+          raccolto.</p>
+        <div class="hero-actions"><a class="btn btn-gold" href="#catalogo">Esplora il catalogo <span
+              aria-hidden="true">↗</span></a><a class="hero-link" href="#azienda">La nostra storia ↓</a></div>
+      </div>
+      <div class="hero-bottom"><span>AZIENDA AGRICOLA ZAMBITO</span><span id="hero-localita">SICILIA, ITALIA</span>
+      </div>
+    </section>
+    <section class="trust-strip" aria-label="Caratteristiche del prodotto"><span>PRODUZIONE AGRICOLA</span><span
+        class="dot">✳</span><span>OLIO EXTRAVERGINE DI OLIVA</span><span class="dot">✳</span><span>CONTATTO
+        DIRETTO</span></section>
+    <section class="about section-wrap" id="azienda">
+      <div class="about-copy">
+        <p class="section-kicker">LA NOSTRA IDENTITÀ</p>
+        <h2 id="about-title">Il gusto autentico dell'olio siciliano.</h2>
+        <p id="about-description">La nostra azienda propone olio extravergine di oliva in diversi formati. Contattaci
+          per informazioni e disponibilità.</p>
+        <div id="certifications" class="certifications" aria-label="Certificazioni dichiarate"></div>
+      </div>
+      <div class="about-visual" id="about-visual">
+        <div class="about-placeholder"><span>✳</span>
+          <p>Una storia che nasce dalla terra</p>
+        </div>
+      </div>
+    </section>
+    <section class="catalog-section" id="catalogo">
+      <div class="section-wrap">
+        <div class="catalog-heading">
+          <div>
+            <p class="section-kicker">I NOSTRI PRODOTTI</p>
+            <h2 id="catalog-title">Scegli il tuo formato.</h2>
+          </div>
+          <p>Esplora i prodotti e contattaci direttamente per disponibilità e ordini.</p>
+        </div>
+        <div id="products" class="products-grid" aria-live="polite">
+          <p>Caricamento catalogo…</p>
+        </div>
+        <p class="catalog-disclaimer">Catalogo informativo: nessun pagamento online. Disponibilità, eventuale spedizione
+          e condizioni di vendita da concordare direttamente.</p>
+      </div>
+    </section>
+    <section class="contact-section" id="contatti">
+      <div class="contact-inner">
+        <p class="section-kicker light">PARLIAMONE</p>
+        <h2 id="contact-title">Parliamo del tuo prossimo ordine.</h2>
+        <p id="contact-description">Hai bisogno di informazioni, disponibilità o di un preventivo? Scrivici
+          direttamente.</p>
+        <div id="contact-actions"><span class="contact-wait">Il contatto WhatsApp sarà disponibile a breve.</span></div>
+        <p class="contact-location" id="contact-location">Sicilia, Italia</p>
+      </div>
+    </section>
   </main>
-  <footer><div class="footer-brand">AZIENDA AGRICOLA <strong>ZAMBITO</strong></div><p>© <span id="year"></span> Azienda Agricola Zambito. Tutti i diritti riservati.</p><a href="#inizio">Torna su ↑</a></footer>
-  <dialog id="product-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="dialog-close" aria-label="Chiudi">×</button><div class="dialog-layout"><div><div id="dialog-main-image" class="dialog-main-image"></div><div id="dialog-gallery" class="dialog-gallery"></div></div><div class="dialog-details"><p class="section-kicker">DETTAGLI PRODOTTO</p><h2 id="dialog-title"></h2><p id="dialog-description"></p><div id="dialog-certifications" class="certifications"></div><div class="dialog-price-wrap"><span id="dialog-old-price"></span><p class="dialog-price" id="dialog-price"></p></div><p id="dialog-unit"></p><p id="dialog-availability"></p><div id="dialog-action"></div></div></div></dialog>
+  <footer>
+    <div class="footer-brand">AZIENDA AGRICOLA <strong>ZAMBITO</strong></div>
+    <p>© <span id="year"></span> Azienda Agricola Zambito. Tutti i diritti riservati.</p><a href="#inizio">Torna su
+      ↑</a>
+  </footer>
+  <dialog id="product-dialog" aria-labelledby="dialog-title"><button class="dialog-close" id="dialog-close"
+      aria-label="Chiudi">×</button>
+    <div class="dialog-layout">
+      <div>
+        <div id="dialog-main-image" class="dialog-main-image"></div>
+        <div id="dialog-gallery" class="dialog-gallery"></div>
+      </div>
+      <div class="dialog-details">
+        <p class="section-kicker">DETTAGLI PRODOTTO</p>
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-description"></p>
+        <div id="dialog-certifications" class="certifications"></div>
+        <div class="dialog-price-wrap"><span id="dialog-old-price"></span>
+          <p class="dialog-price" id="dialog-price"></p>
+        </div>
+        <p id="dialog-unit"></p>
+        <p id="dialog-availability"></p>
+        <div id="dialog-action"></div>
+      </div>
+    </div>
+  </dialog>
 </body>
+
 </html>
