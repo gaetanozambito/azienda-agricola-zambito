@@ -1,7 +1,7 @@
 {
   "azienda": "Azienda Agricola Zambito",
   "prodotto": "Olio extravergine di oliva Biologico DOP Val di Mazara",
-  "prezzo_litro_eur": 10,
+  "prezzo_litro_eur": 11,
   "valuta": "EUR",
   "certificazioni": {
     "biologico": "verificato",
@@ -10,10 +10,20 @@
   "prodotti": [
     {
       "disponibile": true,
+      "in_evidenza": false,
+      "id": "latta-3l",
+      "nome": "Latta 3 litri",
+      "litri": 3,
+      "prezzo_eur": 30,
+      "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 3 litri.",
+      "immagine": "/uploads/latta-d’olio-extravergine-biologico-da-3-litri.png"
+    },
+    {
+      "disponibile": true,
       "litri": 5,
-      "descrizione": "Olio extravergine di oliva in latta da 5 litri.",
+      "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 5 litri.",
       "prezzo_precedente_eur": 65,
-      "prezzo_eur": 50,
+      "prezzo_eur": 55,
       "immagine": "/uploads/bio-latta.png",
       "in_evidenza": true,
       "nome": "Latta 5 litri",
@@ -23,7 +33,7 @@
     {
       "disponibile": true,
       "litri": 10,
-      "descrizione": "Olio extravergine di oliva in latta da 10 litri.",
+      "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 10 litri.",
       "prezzo_precedente_eur": 130,
       "prezzo_eur": 100,
       "immagine": "/uploads/etichetta-olio-zambito-biologico-10-litri-1.png",
@@ -34,20 +44,8 @@
     },
     {
       "disponibile": true,
-      "litri": 20,
-      "descrizione": "Olio extravergine di oliva in latta da 20 litri.",
-      "prezzo_precedente_eur": 260,
-      "prezzo_eur": 200,
-      "immagine": "/uploads/latta-d’olio-zambito-da-20-litri-2.png",
-      "in_evidenza": false,
-      "nome": "Latta 20 litri",
-      "id": "latta-20l",
-      "galleria": []
-    },
-    {
-      "disponibile": true,
       "litri": 25,
-      "descrizione": "Olio extravergine di oliva in latta da 25 litri.",
+      "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 25 litri.",
       "prezzo_precedente_eur": 325,
       "prezzo_eur": 250,
       "immagine": "/uploads/etichetta-olio-extra-vergine-25-litri-3.png",
