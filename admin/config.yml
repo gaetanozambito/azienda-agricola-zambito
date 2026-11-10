@@ -1,34 +1,72 @@
-# Configurare il provider OAuth GitHub prima dell'accesso al pannello.
 backend:
   name: github
   repo: gaetanozambito/azienda-agricola-zambito
   branch: main
   base_url: https://zambito-decap-oauth.folderdj.workers.dev
   auth_endpoint: auth
-media_folder: "uploads"
-public_folder: "/uploads"
+media_folder: uploads
+public_folder: /uploads
 locale: it
+publish: true
 collections:
-  - name: "catalogo"
-    label: "Catalogo e contatti"
+  - name: catalogo
+    label: Catalogo prodotti
     files:
-      - label: "Prodotti e prezzi"
-        name: "prodotti"
-        file: "catalogo.json"
+      - name: prodotti
+        label: Prodotti, prezzi e certificazioni
+        file: catalogo.json
         format: json
         fields:
-          - {label: "Nome azienda", name: azienda, widget: string}
-          - {label: "Nome prodotto", name: prodotto, widget: string}
-          - {label: "Prezzo per litro (€)", name: prezzo_litro_eur, widget: number, value_type: float, min: 0, step: 0.01}
-          - {label: "Valuta", name: valuta, widget: hidden, default: EUR}
-          - label: "Formati in litri"
-            name: formati_litri
-            widget: list
-            field: {label: "Litri", name: litri, widget: number, value_type: int, min: 1}
-          - {label: "WhatsApp (prefisso internazionale, senza +)", name: whatsapp, widget: string, required: false}
-          - label: "Verifica certificazioni (uso interno)"
+          - {label: Nome azienda, name: azienda, widget: string}
+          - {label: Denominazione olio, name: prodotto, widget: string}
+          - {label: Prezzo di riferimento per litro (€), name: prezzo_litro_eur, widget: number, value_type: float, min: 0, step: 0.01, hint: "Solo informativo: ogni prodotto ha un prezzo autonomo."}
+          - {label: Valuta, name: valuta, widget: hidden, default: EUR}
+          - label: Certificazioni e dichiarazioni
             name: certificazioni
             widget: object
+            hint: "Seleziona verificato solo se possiedi la documentazione pertinente. La pubblicazione mostra il badge soltanto per lo stato verificato."
             fields:
-              - {label: "Biologico", name: biologico, widget: select, options: [da_verificare, verificato], default: da_verificare}
-              - {label: "DOP Val di Mazara", name: dop_val_di_mazara, widget: select, options: [da_verificare, verificato], default: da_verificare}
+              - {label: Certificazione biologica, name: biologico, widget: select, options: [da_verificare, verificato], default: da_verificare}
+              - {label: DOP Val di Mazara, name: dop_val_di_mazara, widget: select, options: [da_verificare, verificato], default: da_verificare}
+          - label: Schede prodotto
+            name: prodotti
+            widget: list
+            summary: "{{fields.nome}} — €{{fields.prezzo_eur}}"
+            min: 1
+            fields:
+              - {label: ID univoco, name: id, widget: string, hint: "Es. latta-5l; non duplicare tra prodotti."}
+              - {label: Nome prodotto, name: nome, widget: string}
+              - {label: Capacità (litri), name: litri, widget: number, value_type: float, min: 0.1, step: 0.1}
+              - {label: Prezzo (€), name: prezzo_eur, widget: number, value_type: float, min: 0, step: 0.01}
+              - {label: Descrizione, name: descrizione, widget: text, required: false}
+              - {label: Foto principale, name: immagine, widget: image, required: false, hint: "Foto reale del prodotto; preferibilmente verticale e luminosa."}
+              - label: Galleria fotografica
+                name: galleria
+                widget: list
+                required: false
+                field: {label: Foto, name: immagine, widget: image}
+              - {label: Disponibile, name: disponibile, widget: boolean, default: true}
+              - {label: In evidenza, name: in_evidenza, widget: boolean, default: false}
+  - name: sito
+    label: Sito e contatti
+    files:
+      - name: impostazioni
+        label: Homepage, logo e contatti
+        file: sito.json
+        format: json
+        fields:
+          - {label: Logo aziendale, name: logo, widget: image, required: false}
+          - {label: Foto principale homepage, name: hero_immagine, widget: image, required: false}
+          - {label: Soprattitolo homepage, name: hero_soprattitolo, widget: string}
+          - {label: Titolo homepage, name: hero_titolo, widget: string}
+          - {label: Descrizione homepage, name: hero_descrizione, widget: text}
+          - {label: Titolo sezione azienda, name: azienda_titolo, widget: string}
+          - {label: Presentazione azienda, name: azienda_testo, widget: text}
+          - {label: Foto azienda/uliveti, name: azienda_immagine, widget: image, required: false}
+          - {label: Titolo catalogo, name: catalogo_titolo, widget: string}
+          - {label: Titolo contatti, name: contatti_titolo, widget: string}
+          - {label: Testo contatti, name: contatti_testo, widget: text}
+          - {label: WhatsApp internazionale senza + (es. 393331234567), name: whatsapp, widget: string, required: false}
+          - {label: Messaggio WhatsApp generico, name: whatsapp_messaggio, widget: text}
+          - {label: Email pubblica, name: email, widget: string, required: false}
+          - {label: Località, name: localita, widget: string, required: false}

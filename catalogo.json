@@ -3,15 +3,14 @@
   "prodotto": "Olio extravergine di oliva biologico DOP Val di Mazara",
   "prezzo_litro_eur": 10,
   "valuta": "EUR",
-  "formati_litri": [
-    5,
-    10,
-    20,
-    25
-  ],
-  "whatsapp": null,
   "certificazioni": {
     "biologico": "verificato",
     "dop_val_di_mazara": "verificato"
-  }
+  },
+  "prodotti": [
+    {"id":"latta-5l","nome":"Latta 5 litri","litri":5,"prezzo_eur":50,"descrizione":"Olio extravergine di oliva in latta da 5 litri.","immagine":"","galleria":[],"disponibile":true,"in_evidenza":true},
+    {"id":"latta-10l","nome":"Latta 10 litri","litri":10,"prezzo_eur":100,"descrizione":"Olio extravergine di oliva in latta da 10 litri.","immagine":"","galleria":[],"disponibile":true,"in_evidenza":false},
+    {"id":"latta-20l","nome":"Latta 20 litri","litri":20,"prezzo_eur":200,"descrizione":"Olio extravergine di oliva in latta da 20 litri.","immagine":"","galleria":[],"disponibile":true,"in_evidenza":false},
+    {"id":"latta-25l","nome":"Latta 25 litri","litri":25,"prezzo_eur":250,"descrizione":"Olio extravergine di oliva in latta da 25 litri.","immagine":"","galleria":[],"disponibile":true,"in_evidenza":false}
+  ]
 }
