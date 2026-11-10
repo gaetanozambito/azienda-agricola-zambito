@@ -23,10 +23,10 @@
     "durata": 8
   },
   {
-    "titolo": "l'olio",
-    "tipo": "video",
-    "immagine": "",
-    "video": "https://www.youtube.com/watch?v=JWBqkRTLJiA",
+    "titolo": "immagione_2",
+    "tipo": "immagine",
+    "immagine": "/uploads/img_1893.jpg",
+    "video": "",
     "durata": 12
   }
 ]
