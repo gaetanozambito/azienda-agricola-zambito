@@ -1,17 +1,17 @@
 {
-  "logo": "",
-  "hero_immagine": "",
+  "whatsapp_messaggio": "Buongiorno, vorrei informazioni sui vostri prodotti.",
   "hero_soprattitolo": "DALLA NOSTRA TERRA · SICILIA",
-  "hero_titolo": "L'essenza della nostra terra.",
   "hero_descrizione": "Olio extravergine di oliva. Una tradizione agricola che raccontiamo attraverso ogni raccolto.",
-  "azienda_titolo": "Il gusto autentico dell'olio siciliano.",
-  "azienda_testo": "La nostra azienda propone olio extravergine di oliva in diversi formati. Contattaci per informazioni e disponibilità.",
+  "localita": "Alessandria della Rocca, Agrigento, Sicilia, Italia",
+  "logo": "/uploads/logo-sito-2-e1726934138900.png",
+  "whatsapp": "393665450598",
+  "azienda_testo": "La nostra azienda propone olio extravergine di oliva Bio in diversi formati. Contattaci per informazioni e disponibilità.",
+  "hero_immagine": "/uploads/dji_0147c.jpg",
+  "contatti_titolo": "Parliamo del tuo prossimo ordine.",
+  "hero_titolo": "L'essenza della nostra terra.",
+  "contatti_testo": "Hai bisogno di informazioni, disponibilità o di un preventivo? Scrivici direttamente.",
   "azienda_immagine": "",
   "catalogo_titolo": "Scegli il tuo formato.",
-  "contatti_titolo": "Parliamo del tuo prossimo ordine.",
-  "contatti_testo": "Hai bisogno di informazioni, disponibilità o di un preventivo? Scrivici direttamente.",
-  "whatsapp": "",
-  "whatsapp_messaggio": "Buongiorno, vorrei informazioni sui vostri prodotti.",
-  "email": "",
-  "localita": "Sicilia, Italia"
+  "azienda_titolo": "Il gusto autentico dell'olio siciliano.",
+  "email": ""
 }
