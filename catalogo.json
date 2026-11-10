@@ -1,7 +1,7 @@
 {
   "azienda": "Azienda Agricola Zambito",
   "prodotto": "Olio extravergine di oliva Biologico DOP Val di Mazara",
-  "prezzo_litro_eur": 11,
+  "prezzo_litro_eur": 10,
   "valuta": "EUR",
   "certificazioni": {
     "biologico": "verificato",
@@ -23,7 +23,7 @@
       "litri": 5,
       "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 5 litri.",
       "prezzo_precedente_eur": 65,
-      "prezzo_eur": 55,
+      "prezzo_eur": 50,
       "immagine": "/uploads/bio-latta.png",
       "in_evidenza": true,
       "nome": "Latta 5 litri",
