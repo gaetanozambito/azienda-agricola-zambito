@@ -9,52 +9,52 @@
   },
   "prodotti": [
     {
-      "id": "latta-5l",
-      "nome": "Latta 5 litri",
+      "disponibile": true,
       "litri": 5,
-      "prezzo_eur": 50,
       "descrizione": "Olio extravergine di oliva in latta da 5 litri.",
+      "prezzo_precedente_eur": 65,
+      "prezzo_eur": 50,
       "immagine": "",
-      "galleria": [],
-      "disponibile": true,
       "in_evidenza": true,
-      "prezzo_precedente_eur": null
+      "nome": "Latta 5 litri",
+      "id": "latta-5l",
+      "galleria": []
     },
     {
-      "id": "latta-10l",
-      "nome": "Latta 10 litri",
+      "disponibile": true,
       "litri": 10,
-      "prezzo_eur": 100,
       "descrizione": "Olio extravergine di oliva in latta da 10 litri.",
+      "prezzo_precedente_eur": 130,
+      "prezzo_eur": 100,
       "immagine": "",
-      "galleria": [],
-      "disponibile": true,
       "in_evidenza": false,
-      "prezzo_precedente_eur": null
+      "nome": "Latta 10 litri",
+      "id": "latta-10l",
+      "galleria": []
     },
     {
-      "id": "latta-20l",
-      "nome": "Latta 20 litri",
+      "disponibile": true,
       "litri": 20,
-      "prezzo_eur": 200,
       "descrizione": "Olio extravergine di oliva in latta da 20 litri.",
+      "prezzo_precedente_eur": 260,
+      "prezzo_eur": 200,
       "immagine": "",
-      "galleria": [],
-      "disponibile": true,
       "in_evidenza": false,
-      "prezzo_precedente_eur": null
+      "nome": "Latta 20 litri",
+      "id": "latta-20l",
+      "galleria": []
     },
     {
-      "id": "latta-25l",
-      "nome": "Latta 25 litri",
-      "litri": 25,
-      "prezzo_eur": 250,
-      "descrizione": "Olio extravergine di oliva in latta da 25 litri.",
-      "immagine": "",
-      "galleria": [],
       "disponibile": true,
+      "litri": 25,
+      "descrizione": "Olio extravergine di oliva in latta da 25 litri.",
+      "prezzo_precedente_eur": 325,
+      "prezzo_eur": 250,
+      "immagine": "",
       "in_evidenza": false,
-      "prezzo_precedente_eur": null
+      "nome": "Latta 25 litri",
+      "id": "latta-25l",
+      "galleria": []
     }
   ]
 }
