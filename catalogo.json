@@ -16,7 +16,7 @@
       "litri": 3,
       "prezzo_eur": 33,
       "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 3 litri.",
-      "immagine": "/uploads/Latta d’olio extravergine biologico da 3 litri.png"
+      "immagine": "/uploads/ae33f018-e729-45bd-8432-25760f5353ca.png"
     },
     {
       "disponibile": true,
@@ -24,7 +24,7 @@
       "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 5 litri.",
       "prezzo_precedente_eur": 65,
       "prezzo_eur": 54,
-      "immagine": "/uploads/bio-latta.png",
+      "immagine": "/uploads/3a67ffd7-6600-4e58-85a6-4ab3081955fc.png",
       "in_evidenza": true,
       "nome": "Latta 5 litri",
       "id": "latta-5l",
@@ -36,7 +36,7 @@
       "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 10 litri.",
       "prezzo_precedente_eur": 130,
       "prezzo_eur": 105,
-      "immagine": "/uploads/Etichetta Olio Zambito Biologico 10 Litri-1.png",
+      "immagine": "/uploads/2c33543d-52bc-49af-8821-fc28acb2a2c7.png",
       "in_evidenza": false,
       "nome": "Latta 10 litri",
       "id": "latta-10l",
@@ -48,7 +48,7 @@
       "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 25 litri.",
       "prezzo_precedente_eur": 325,
       "prezzo_eur": 258,
-      "immagine": "/uploads/Etichetta Olio Extra Vergine 25 Litri-3.png",
+      "immagine": "/uploads/d6639305-5c7c-4979-8012-fa88e562b8ab.png",
       "in_evidenza": false,
       "nome": "Latta 25 litri",
       "id": "latta-25l",
