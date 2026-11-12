@@ -10,13 +10,14 @@
   "prodotti": [
     {
       "disponibile": true,
-      "in_evidenza": false,
-      "id": "latta-3l",
-      "nome": "Latta 3 litri",
       "litri": 3,
-      "prezzo_eur": 33,
       "descrizione": "Olio extravergine di oliva Bio DOP Val di Mazara in latta da 3 litri.",
-      "immagine": "/uploads/ae33f018-e729-45bd-8432-25760f5353ca.png"
+      "prezzo_precedente_eur": 39,
+      "prezzo_eur": 33,
+      "immagine": "/uploads/ae33f018-e729-45bd-8432-25760f5353ca.png",
+      "in_evidenza": false,
+      "nome": "Latta 3 litri",
+      "id": "latta-3l"
     },
     {
       "disponibile": true,
